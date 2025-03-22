@@ -6,33 +6,29 @@ Ask me one question at a time so we can develop a thorough, step-by-step spec fo
 
 Here’s the idea with some notes i have so far:
 
-i want to build a like reddit app-looking overlay for hackernews.com 
+i want to build a like reddit app-looking overlay for hackernews.com
 
-- mobile friendy 
+- mobile friendy
 - dark/light mode
 - readonly, no login, posting, answering, commenting, whatever just reading the api to get stories and posts
 
-
 - there should be a top bar with the title (hno) and a button to change dark/light mode
 - then a bar beneath with a dropdown menu to allow filtering the stories (best, new, etc), here you need to help me whats possible with the api
--  beneath is the mainfeed showing the stories ( it shows the time of the story, the auhtor, the domain name of the link (if its a link to a specific github project for example, it should show the domain github.com), count of upvotes, count of comments, title) 
--  the storyfeed should be realized with pagination, numberd pages, page numbers at the bottom, 20 stories per page, the comments with infinte scrolling, We'll load only the initially visible comments first, and then load the remaining comments in the background for a smooth user experience.
+- beneath is the mainfeed showing the stories ( it shows the time of the story, the auhtor, the domain name of the link (if its a link to a specific github project for example, it should show the domain github.com), count of upvotes, count of comments, title)
+- the storyfeed should be realized with pagination, numberd pages, page numbers at the bottom, 20 stories per page, the comments with infinte scrolling, We'll load only the initially visible comments first, and then load the remaining comments in the background for a smooth user experience.
 - for the comments section, we'll include the comment text along with author name, timestamp, and comment score.
 - we'll implement nested comments with indentation and vertical lines similar to the Reddit app design
 - the app will check the user's system preference for dark/light mode by default, then allow them to manually override if desired
 - make sure external links open in new tabs
 - error and missed api calls and such should be displayed via popups
 - we'll design the error popups to disappear automatically after a short duration, but also provide an option for the user to close them instantly.
--  when you click on a story, it should open a full screen modal with the comments etc
--  react query/tanstack query for the api calls
--  
-
+- when you click on a story, it should open a full screen modal with the comments etc
+- react query/tanstack query for the api calls
+-
 
 techstack: vite react typescript tailwind
 
-
 - i want to include ssr in react
-
 
 also, i want to ship fast, no time for accessibility, internatianlozication, caching, etc, this will all come later. i want to have a working mvp as fast as possible
 

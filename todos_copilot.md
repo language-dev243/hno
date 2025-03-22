@@ -1,35 +1,37 @@
 # Step-by-Step Blueprint for "hno"
 
 ## 1. Initial Project Setup
-- [ ] Initialize the project with Vite, React, TypeScript, Tailwind CSS, and React Query.
-  - [ ] Run the command to create a new Vite project.
-  - [ ] Choose React and TypeScript as the project template.
-- [ ] Install Tailwind CSS.
-  - [ ] Run the command to install Tailwind CSS.
-  - [ ] Configure Tailwind CSS in the project.
-- [ ] Install React Query.
-  - [ ] Run the command to install React Query.
-  - [ ] Set up a basic configuration for React Query.
-- [ ] Set up a basic folder structure.
-  - [ ] Create a `components` folder.
-  - [ ] Create a `hooks` folder.
-  - [ ] Create a `utilities` folder.
-- [ ] Configure ESLint.
-  - [ ] Install ESLint.
-  - [ ] Create an ESLint configuration file.
-  - [ ] Add basic ESLint rules.
-- [ ] Configure Prettier.
-  - [ ] Install Prettier.
-  - [ ] Create a Prettier configuration file.
-  - [ ] Integrate Prettier with ESLint.
-- [ ] Configure TypeScript.
-  - [ ] Create a `tsconfig.json` file.
-  - [ ] Add TypeScript configurations.
+
+- [x] Initialize the project with Vite, React, TypeScript, Tailwind CSS, and React Query.
+  - [x] Run the command to create a new Vite project.
+  - [x] Choose React and TypeScript as the project template.
+- [x] Install Tailwind CSS.
+  - [x] Run the command to install Tailwind CSS.
+  - [x] Configure Tailwind CSS in the project.
+- [x] Install React Query.
+  - [x] Run the command to install React Query.
+  - [x] Set up a basic configuration for React Query.
+- [x] Set up a basic folder structure.
+  - [x] Create a `components` folder.
+  - [x] Create a `hooks` folder.
+  - [x] Create a `utilities` folder.
+- [x] Configure ESLint.
+  - [x] Install ESLint.
+  - [x] Create an ESLint configuration file.
+  - [x] Add basic ESLint rules.
+- [x] Configure Prettier.
+  - [x] Install Prettier.
+  - [x] Create a Prettier configuration file.
+  - [x] Integrate Prettier with ESLint.
+- [x] Configure TypeScript.
+  - [x] Create a `tsconfig.json` file.
+  - [x] Add TypeScript configurations.
 - [ ] Implement a simple home page.
   - [ ] Create a `Home` component.
   - [ ] Add a placeholder header to the `Home` component.
 
 ## 2. Basic Routing and Layout
+
 - [ ] Set up React Router.
   - [ ] Install React Router.
   - [ ] Configure the router in the project.
@@ -44,6 +46,7 @@
   - [ ] Add logic to open the `StoryModal` when a story is clicked.
 
 ## 3. Fetch and Display Stories
+
 - [ ] Integrate React Query for API calls.
   - [ ] Set up a basic query client.
   - [ ] Create a custom hook for fetching stories.
@@ -59,6 +62,7 @@
   - [ ] Display error popups when API calls fail.
 
 ## 4. Implement Story Modal
+
 - [ ] Create a `StoryModal` component that opens when a story is clicked.
   - [ ] Set up the structure of the `StoryModal` component.
   - [ ] Add logic to open the modal when a story is clicked.
@@ -69,6 +73,7 @@
   - [ ] Add CSS transitions for the modal opening and closing.
 
 ## 5. Fetch and Display Comments
+
 - [ ] Implement a `Comment` component to display nested comments.
   - [ ] Create the structure of the `Comment` component.
   - [ ] Add logic to display nested comments.
@@ -80,6 +85,7 @@
   - [ ] Add CSS styles for indentation and vertical lines.
 
 ## 6. Dark/Light Mode Support
+
 - [ ] Implement a system to detect and apply system preference on load.
   - [ ] Add logic to detect system preference.
   - [ ] Apply the detected preference on load.
@@ -91,6 +97,7 @@
   - [ ] Retrieve the preference from local storage on load.
 
 ## 7. Error Handling and Notifications
+
 - [ ] Implement a global error-handling mechanism.
   - [ ] Create a global error handler.
   - [ ] Integrate the error handler with React Query.
@@ -102,6 +109,7 @@
   - [ ] Add logic to display user-friendly feedback.
 
 ## 8. Improve UI/UX
+
 - [ ] Add animations and transitions for modals and popups.
   - [ ] Add CSS animations for modals.
   - [ ] Add CSS animations for popups.
@@ -113,6 +121,7 @@
   - [ ] Adjust spacing between elements.
 
 ## 9. Unit and Integration Testing
+
 - [ ] Write unit tests for all core components.
   - [ ] Write tests for `StoryFeed` component.
   - [ ] Write tests for `StoryItem` component.
@@ -126,6 +135,7 @@
   - [ ] Write tests for filtering options.
 
 ## 10. End-to-End Testing
+
 - [ ] Use Cypress or Playwright to simulate real user interactions.
   - [ ] Set up Cypress or Playwright in the project.
   - [ ] Write tests to simulate user interactions.
@@ -138,6 +148,7 @@
   - [ ] Write tests for dark/light mode toggle.
 
 ## 11. Deployment and Optimization
+
 - [ ] Optimize performance with lazy loading and caching.
   - [ ] Implement lazy loading for components.
   - [ ] Set up caching for API responses.
