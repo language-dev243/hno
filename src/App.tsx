@@ -1,10 +1,13 @@
 import Header from "./components/Header";
+import FilterBar from "./components/FilterBar";
+import StoryFeed from "./components/StoryFeed";
 
 const App = () => {
   return (
     <div>
       <Header />
-      <h1>hello from app</h1>
+      <FilterBar />
+      <StoryFeed />
     </div>
   )
 };

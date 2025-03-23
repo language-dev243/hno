@@ -1,11 +1,21 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import App from "./App";
 import "./index.css";
 
-import App from "./App";
+const root = document.getElementById("root");
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+const queryClient = new QueryClient();
+
+ReactDOM.createRoot(root).render(
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<App />} />
+      </Routes>
+    </BrowserRouter>
+  </QueryClientProvider>,
 );
+
+// TODO: check packagejson to see which deps are actually dev deps

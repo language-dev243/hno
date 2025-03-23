@@ -1,4 +1,4 @@
-# Step-by-Step Blueprint for "hno" 27 / 39
+# Step-by-Step Blueprint for "hno" 30 / 38
 
 ## 1. Initial Project Setup 27/27
 
@@ -30,14 +30,13 @@
   - [x] Create a `Home` component.
   - [x] Add a placeholder header to the `Home` component.
 
-## 2. Basic Routing and Layout 0 / 12
+## 2. Basic Routing and Layout 3 / 11
 
-- [ ] Set up React Router.
-  - [ ] Install React Router.
-  - [ ] Configure the router in the project.
-- [ ] Implement a basic layout with a `Header` component.
-  - [ ] Create a `Header` component.
-  - [ ] Add the `Header` component to the main layout.
+- [x] Set up React Router.
+  - [x] Install React Router.
+  - [x] Configure the router in the project.
+- [x] Implement a basic layout with a `Header` component.
+  - [x] Create a `Header` component.
 - [ ] Configure a route for the main story feed.
   - [ ] Create a `StoryFeed` component.
   - [ ] Add a route for the `StoryFeed` component.
