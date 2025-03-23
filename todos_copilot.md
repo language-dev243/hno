@@ -1,6 +1,6 @@
-# Step-by-Step Blueprint for "hno" 24 / 39
+# Step-by-Step Blueprint for "hno" 27 / 39
 
-## 1. Initial Project Setup 24/27
+## 1. Initial Project Setup 27/27
 
 - [x] Initialize the project with Vite, React, TypeScript, Tailwind CSS, and React Query.
   - [x] Run the command to create a new Vite project.
@@ -26,9 +26,9 @@
 - [x] Configure TypeScript.
   - [x] Create a `tsconfig.json` file.
   - [x] Add TypeScript configurations.
-- [ ] Implement a simple home page.
-  - [ ] Create a `Home` component.
-  - [ ] Add a placeholder header to the `Home` component.
+- [x] Implement a simple home page.
+  - [x] Create a `Home` component.
+  - [x] Add a placeholder header to the `Home` component.
 
 ## 2. Basic Routing and Layout 0 / 12
 
