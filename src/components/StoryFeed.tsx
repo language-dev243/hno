@@ -3,11 +3,12 @@ import StoryCard from './StoryCard';
 import { useTopStories } from '../hooks/fetchTopStories';
 
 const StoryFeed = () => {
-
   const { data, isLoading, error } = useTopStories();
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error fetching data</div>;
+
+  console.log("data: ", data)
 
   return (
     <div className="bg-gray-800 text-white p-4 flex justify-center items-center">
