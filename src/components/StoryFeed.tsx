@@ -24,13 +24,15 @@ const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory }) => {
       { threshold: 1.0 },
     );
 
-    if (lastStoryRef.current) {
-      observer.observe(lastStoryRef.current);
+    const currentLastStory = lastStoryRef.current;
+
+    if (currentLastStory) {
+      observer.observe(currentLastStory);
     }
 
     return () => {
-      if (lastStoryRef.current) {
-        observer.unobserve(lastStoryRef.current);
+      if (currentLastStory) {
+        observer.unobserve(currentLastStory);
       }
     };
   }, [data, storiesLoaded]);

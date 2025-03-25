@@ -10,10 +10,13 @@ const App = () => {
   return (
     <div>
       <Header />
-      <FilterBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+      <FilterBar
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
       <StoryFeed selectedCategory={selectedCategory} />
     </div>
-  )
+  );
 };
 
 export default App;

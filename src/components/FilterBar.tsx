@@ -3,7 +3,10 @@ interface FilterBarProps {
   setSelectedCategory: (category: string) => void;
 }
 
-const FilterBar: React.FC<FilterBarProps> = ({ selectedCategory, setSelectedCategory }) => {
+const FilterBar: React.FC<FilterBarProps> = ({
+  selectedCategory,
+  setSelectedCategory,
+}) => {
   return (
     <div className="bg-gray-800 text-white p-4 flex items-center border-b border-blue-100">
       <h1 className="text-2xl mr-4">Stories</h1>
