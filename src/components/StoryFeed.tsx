@@ -5,9 +5,13 @@ import StoryCard from "./StoryCard";
 
 interface StoryFeedProps {
   selectedCategory: string;
+  handleOnStoryClick: (storyID: number) => void;
 }
 
-const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory }) => {
+const StoryFeed: React.FC<StoryFeedProps> = ({
+  selectedCategory,
+  handleOnStoryClick,
+}) => {
   const { data, isLoading, error } = useStories(selectedCategory);
   const [storiesLoaded, setStoriesLoaded] = useState(10);
   const lastStoryRef = useRef(null);
@@ -46,7 +50,11 @@ const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory }) => {
         {data?.slice(0, storiesLoaded).map((id, index) => {
           const isLast = index === storiesLoaded - 1;
           return (
-            <li key={id} ref={isLast ? lastStoryRef : null}>
+            <li
+              key={id}
+              onClick={() => handleOnStoryClick(id)}
+              ref={isLast ? lastStoryRef : null}
+            >
               <StoryCard storyID={id} />
             </li>
           );
