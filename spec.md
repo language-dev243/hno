@@ -8,7 +8,7 @@
 
 1. **Story Feed**
 
-   - Numbered pages with 20 stories per page.
+   - Numbered pages with 20 stories per page => switched to infinite scrolling
    - Filters provided by the Hacker News API (best, new, etc.).
    - Story items are clickable and open in a full-screen modal.
 
