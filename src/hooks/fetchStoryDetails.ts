@@ -1,15 +1,28 @@
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
-const fetchStoryDetails = async (storyID) => {
-    const { data } = await axios.get(`https://hacker-news.firebaseio.com/v0/item/${storyID}.json`);
-    return data;
+interface StoryData {
+  by: string;
+  descendants?: number;
+  id: number;
+  score?: number;
+  time: number;
+  title: string;
+  type: string;
+  url?: string;
+}
+
+const fetchStoryDetails = async (storyID: number): Promise<StoryData> => {
+  const { data } = await axios.get(
+    `https://hacker-news.firebaseio.com/v0/item/${storyID}.json`,
+  );
+  return data;
 };
 
-export const useStoryDetails = (storyID) => {
-    return useQuery({
-        queryKey: ['storyDetails', storyID], // Include the storyID in the query key
-        queryFn: () => fetchStoryDetails(storyID), // Pass the storyID to the fetch function
-        enabled: !!storyID, // Only run the query if storyID is provided
-    });
+export const useStoryDetails = (storyID: number) => {
+  return useQuery<StoryData>({
+    queryKey: ["storyDetails", storyID],
+    queryFn: () => fetchStoryDetails(storyID),
+    enabled: !!storyID,
+  });
 };

@@ -1,15 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-const fetchStories = async (category) => {
+
+type StoryID = number;
+
+const fetchStories = async (category: string): Promise<StoryID[]> => {
   const { data } = await axios.get(
     `https://hacker-news.firebaseio.com/v0/${category}.json`
   );
   return data;
 };
 
-export const useStories = (category) => {
-  return useQuery({
+export const useStories = (category: string) => {
+  return useQuery<StoryID[]>({
     queryKey: ["stories", category], // Make query key dynamic
     queryFn: () => fetchStories(category),
     enabled: !!category, // Only fetch if category is valid
