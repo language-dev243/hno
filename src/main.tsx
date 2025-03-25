@@ -8,7 +8,7 @@ const root = document.getElementById("root");
 
 const queryClient = new QueryClient();
 
-ReactDOM.createRoot(root).render(
+ReactDOM.createRoot(root!).render(
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <Routes>
