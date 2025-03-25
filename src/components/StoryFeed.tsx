@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { useTopStories } from "../hooks/fetchTopStories";
+import { useStories } from "../hooks/fetchStories";
 
 import StoryCard from "./StoryCard";
 
-const StoryFeed = () => {
-  const { data, isLoading, error } = useTopStories();
+const StoryFeed = ({ selectedCategory }) => {
+  const { data, isLoading, error } = useStories(selectedCategory);
   const [storiesLoaded, setStoriesLoaded] = useState(10);
   const lastStoryRef = useRef(null);
 
