@@ -12,8 +12,8 @@ const fetchStories = async (category: string): Promise<StoryID[]> => {
 
 export const useStories = (category: string) => {
   return useQuery<StoryID[]>({
-    queryKey: ["stories", category], // Make query key dynamic
+    queryKey: ["stories", category],
     queryFn: () => fetchStories(category),
-    enabled: !!category, // Only fetch if category is valid
+    enabled: !!category,
   });
 };

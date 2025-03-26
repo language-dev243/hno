@@ -65,6 +65,3 @@ const StoryFeed: React.FC<StoryFeedProps> = ({
 };
 
 export default StoryFeed;
-
-// todo: loading should return a skeleton component
-// todo: put use effect in custum hook?

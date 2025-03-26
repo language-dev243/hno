@@ -17,5 +17,3 @@ ReactDOM.createRoot(root!).render(
     </BrowserRouter>
   </QueryClientProvider>,
 );
-
-// TODO: check packagejson to see which deps are actually dev deps

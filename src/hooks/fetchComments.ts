@@ -13,7 +13,7 @@ interface CommentData {
 
 const fetchComment = async (commentID: number): Promise<CommentData> => {
   const { data } = await axios.get(
-    `https://hacker-news.firebaseio.com/v0/item/${commentID}.json`
+    `https://hacker-news.firebaseio.com/v0/item/${commentID}.json`,
   );
   return data;
 };
