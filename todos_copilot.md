@@ -1,4 +1,4 @@
-# Step-by-Step Blueprint for "hno" 30 / 38
+# Step-by-Step Blueprint for "hno" 52 / 120
 
 ## 1. Initial Project Setup 27/27
 
@@ -30,7 +30,7 @@
   - [x] Create a `Home` component.
   - [x] Add a placeholder header to the `Home` component.
 
-## 2. Basic Routing and Layout 3 / 11
+## 2. Basic Routing and Layout 9 / 11
 
 - [x] Set up React Router.
   - [x] Install React Router.
@@ -38,40 +38,40 @@
 - [x] Implement a basic layout with a `Header` component.
   - [x] Create a `Header` component.
 - [ ] Configure a route for the main story feed.
-  - [ ] Create a `StoryFeed` component.
+  - [x] Create a `StoryFeed` component.
   - [ ] Add a route for the `StoryFeed` component.
-- [ ] Add a placeholder for modal navigation for story details.
-  - [ ] Create a placeholder `StoryModal` component.
-  - [ ] Add logic to open the `StoryModal` when a story is clicked.
+- [x] Add a placeholder for modal navigation for story details.
+  - [x] Create a placeholder `StoryModal` component.
+  - [x] Add logic to open the `StoryModal` when a story is clicked.
 
-## 3. Fetch and Display Stories
+## 3. Fetch and Display Stories 10 / 13
 
-- [ ] Integrate React Query for API calls.
-  - [ ] Set up a basic query client.
-  - [ ] Create a custom hook for fetching stories.
-- [ ] Fetch and display a list of stories from the Hacker News API.
-  - [ ] Create a `StoryItem` component.
-  - [ ] Display the list of stories using the `StoryItem` component.
-- [ ] Implement pagination (20 stories per page) with filtering options.
-  - [ ] Add pagination controls.
-  - [ ] Implement logic to fetch the next 20 stories.
-  - [ ] Add filtering options.
+- [x] Integrate React Query for API calls.
+  - [x] Set up a basic query client.
+  - [x] Create a custom hook for fetching stories.
+- [x] Fetch and display a list of stories from the Hacker News API.
+  - [x] Create a `StoryItem` component.
+  - [x] Display the list of stories using the `StoryItem` component.
+- [x] Implement pagination (20 stories per page) with filtering options.
+  - [x] Add pagination controls.
+  - [x] Implement logic to fetch the next 20 stories.
+  - [x] Add filtering options.
 - [ ] Ensure proper error handling with error popups.
   - [ ] Create an `ErrorPopup` component.
   - [ ] Display error popups when API calls fail.
 
-## 4. Implement Story Modal
+## 4. Implement Story Modal 6 / 8
 
-- [ ] Create a `StoryModal` component that opens when a story is clicked.
-  - [ ] Set up the structure of the `StoryModal` component.
-  - [ ] Add logic to open the modal when a story is clicked.
-- [ ] Fetch and display full story details in the modal.
-  - [ ] Create a custom hook for fetching story details.
-  - [ ] Display story details in the `StoryModal` component.
+- [x] Create a `StoryModal` component that opens when a story is clicked.
+  - [x] Set up the structure of the `StoryModal` component.
+  - [x] Add logic to open the modal when a story is clicked.
+- [x] Fetch and display full story details in the modal.
+  - [x] Create a custom hook for fetching story details.
+  - [x] Display story details in the `StoryModal` component.
 - [ ] Implement smooth transitions for opening and closing the modal.
   - [ ] Add CSS transitions for the modal opening and closing.
 
-## 5. Fetch and Display Comments
+## 5. Fetch and Display Comments 0 / 9
 
 - [ ] Implement a `Comment` component to display nested comments.
   - [ ] Create the structure of the `Comment` component.
@@ -83,7 +83,7 @@
 - [ ] Implement indentation and vertical lines for nested comments.
   - [ ] Add CSS styles for indentation and vertical lines.
 
-## 6. Dark/Light Mode Support
+## 6. Dark/Light Mode Support 0 / 9
 
 - [ ] Implement a system to detect and apply system preference on load.
   - [ ] Add logic to detect system preference.
@@ -95,7 +95,7 @@
   - [ ] Add logic to store the preference in local storage.
   - [ ] Retrieve the preference from local storage on load.
 
-## 7. Error Handling and Notifications
+## 7. Error Handling and Notifications 0 / 9
 
 - [ ] Implement a global error-handling mechanism.
   - [ ] Create a global error handler.
@@ -107,7 +107,7 @@
   - [ ] Write meaningful error messages.
   - [ ] Add logic to display user-friendly feedback.
 
-## 8. Improve UI/UX
+## 8. Improve UI/UX 0 / 9
 
 - [ ] Add animations and transitions for modals and popups.
   - [ ] Add CSS animations for modals.
@@ -133,7 +133,7 @@
   - [ ] Write tests for pagination logic.
   - [ ] Write tests for filtering options.
 
-## 10. End-to-End Testing
+## 10. End-to-End Testing 0 / 10
 
 - [ ] Use Cypress or Playwright to simulate real user interactions.
   - [ ] Set up Cypress or Playwright in the project.
@@ -146,7 +146,7 @@
 - [ ] Ensure dark/light mode toggles correctly.
   - [ ] Write tests for dark/light mode toggle.
 
-## 11. Deployment and Optimization
+## 11. Deployment and Optimization 0 / 11
 
 - [ ] Optimize performance with lazy loading and caching.
   - [ ] Implement lazy loading for components.
@@ -160,6 +160,10 @@
   - [ ] Monitor performance metrics.
   - [ ] Track and fix errors in production.
 
-## 12. future todos
+## 12. future todos 0 / 5
 
 - [ ] add favicon
+- [ ] check packagejson to see which deps are actually dev deps
+- [ ] no setters as props
+- [ ] loading should return a skeleton component
+- [ ] put use effect in custum hook?
