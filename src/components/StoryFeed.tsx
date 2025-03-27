@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { useOutletContext } from "react-router"
+import { useOutletContext } from "react-router";
 import { useStories } from "../hooks/fetchStories";
 
 import StoryCard from "./StoryCard";
@@ -8,13 +8,21 @@ interface StoryFeedProps {
   selectedCategory: string;
 }
 
-const StoryFeed: React.FC<StoryFeedProps> = ({
-  selectedCategory
-}) => {
-  const { handleOnStoryClick } = useOutletContext<{ handleOnStoryClick: (storyID: number) => void }>();
+const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory }) => {
+  const { handleOnStoryClick, setError } = useOutletContext<{
+    handleOnStoryClick: (storyID: number) => void;
+    setError: (message: string) => void;
+  }>();
+
   const { data, isLoading, error } = useStories(selectedCategory);
   const [storiesLoaded, setStoriesLoaded] = useState(10);
   const lastStoryRef = useRef(null);
+
+  useEffect(() => {
+    if (error) {
+      setError("Failed to load stories. Please try again later.");
+    }
+  }, [error, setError]);
 
   useEffect(() => {
     if (!data) return;
@@ -42,7 +50,6 @@ const StoryFeed: React.FC<StoryFeedProps> = ({
   }, [data, storiesLoaded]);
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error fetching data</div>;
 
   return (
     <div className="bg-gray-800 text-white p-4 flex justify-center items-center">
