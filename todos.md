@@ -13,6 +13,7 @@
   - [End-to-End Testing](#end-to-end-testing)
   - [Deployment and Optimization](#deployment-and-optimization)
   - [Future Todos](#future-todos)
+  - [App-Wide Date Formatting](#app-wide-date-formatting)
 
 ## Implement Story Modal
 
@@ -22,15 +23,15 @@
 
 ## Fetch and Display Comments
 
-- [ ] Implement a `Comment` component to display nested comments.
-  - [ ] Create the structure of the `Comment` component.
-  - [ ] Add logic to display nested comments.
-- [ ] Load only initially visible comments first.
-  - [ ] Fetch and display the first level of comments.
+- [x] Implement a `Comment` component to display nested comments.
+  - [x] Create the structure of the `Comment` component.
+  - [x] Add logic to display nested comments.
+- [x] Load only initially visible comments first.
+  - [x] Fetch and display the first level of comments.
 - [ ] Fetch remaining comments in the background for a smoother experience.
   - [ ] Add logic to fetch nested comments in the background.
-- [ ] Implement indentation and vertical lines for nested comments.
-  - [ ] Add CSS styles for indentation and vertical lines.
+- [x] Implement indentation and vertical lines for nested comments.
+  - [x] Add CSS styles for indentation and vertical lines.
 
 ## Dark/Light Mode Support
 
@@ -53,7 +54,7 @@
 ## Improve UI/UX
 
 - [ ] Add animations and transitions for modals and popups.
-  - [ ] Add CSS animations for modals.
+  - [x] Add CSS animations for modals.
   - [ ] Add CSS animations for popups.
 - [ ] Optimize layout for mobile responsiveness.
   - [ ] Add responsive styles for mobile devices.
@@ -110,3 +111,10 @@
 - [ ] Avoid using setters as props.
 - [ ] Use a skeleton component for loading states.
 - [ ] Consider moving custom hooks to a separate file.
+
+## App-Wide Date Formatting
+
+- [ ] Implement consistent date formatting across the application.
+  - [ ] Choose a date formatting library (e.g., date-fns).
+  - [ ] Update all date displays to use the chosen formatting.
+  - [ ] Ensure consistency in date formatting across all components.
