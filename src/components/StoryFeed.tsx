@@ -1,17 +1,17 @@
 import { useState, useRef, useEffect } from "react";
+import { useOutletContext } from "react-router"
 import { useStories } from "../hooks/fetchStories";
 
 import StoryCard from "./StoryCard";
 
 interface StoryFeedProps {
   selectedCategory: string;
-  handleOnStoryClick: (storyID: number) => void;
 }
 
 const StoryFeed: React.FC<StoryFeedProps> = ({
-  selectedCategory,
-  handleOnStoryClick,
+  selectedCategory
 }) => {
+  const { handleOnStoryClick } = useOutletContext<{ handleOnStoryClick: (storyID: number) => void }>();
   const { data, isLoading, error } = useStories(selectedCategory);
   const [storiesLoaded, setStoriesLoaded] = useState(10);
   const lastStoryRef = useRef(null);
@@ -52,7 +52,7 @@ const StoryFeed: React.FC<StoryFeedProps> = ({
           return (
             <li
               key={id}
-              onClick={() => handleOnStoryClick(id)}
+              onClick={() => handleOnStoryClick(Number(id))}
               ref={isLast ? lastStoryRef : null}
             >
               <StoryCard storyID={id} />

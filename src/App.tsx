@@ -1,8 +1,8 @@
 import { useState } from "react";
+import { Outlet } from "react-router";
 
 import Header from "./components/Header";
 import FilterBar from "./components/FilterBar";
-import StoryFeed from "./components/StoryFeed";
 import StoryModal from "./components/StoryModal";
 
 const App = () => {
@@ -27,10 +27,7 @@ const App = () => {
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
       />
-      <StoryFeed
-        selectedCategory={selectedCategory}
-        handleOnStoryClick={handleOnStoryClick}
-      />
+      <Outlet context={{ handleOnStoryClick }} />
       <StoryModal
         isStoryModalOpen={isStoryModalOpen}
         selectedStoryID={selectedStoryID}
