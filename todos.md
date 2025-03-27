@@ -14,6 +14,7 @@
   - [Deployment and Optimization](#deployment-and-optimization)
   - [Future Todos](#future-todos)
   - [App-Wide Date Formatting](#app-wide-date-formatting)
+  - [diverses](#diverses)
 
 ## Implement Story Modal
 
@@ -118,3 +119,8 @@
   - [ ] Choose a date formatting library (e.g., date-fns).
   - [ ] Update all date displays to use the chosen formatting.
   - [ ] Ensure consistency in date formatting across all components.
+
+## diverses
+
+- [ ] überall error popup implementieren
+- [ ] jdie ersten comments sollten keine vertikale linie haben
