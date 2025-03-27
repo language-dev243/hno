@@ -1,4 +1,5 @@
 import { useComments } from "../hooks/fetchComments";
+import Comment from "./Comment";
 
 interface CommentListProps {
   commentIDs: number[] | null;
@@ -12,14 +13,7 @@ const CommentList: React.FC<CommentListProps> = ({ commentIDs }) => {
 
   return (
     <div>
-      {data?.map((comment) => (
-        <div key={comment.id} className="comment">
-          <p>
-            <strong>{comment.by}</strong> - {comment.time}
-          </p>
-          <p>{comment.text}</p>
-        </div>
-      ))}
+      {data?.map((comment) => <Comment key={comment.id} comment={comment} />)}
     </div>
   );
 };
