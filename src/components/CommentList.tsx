@@ -1,4 +1,4 @@
-import { useComments } from "../hooks/fetchComments";
+import { useComments } from "../hooks/useComments";
 import Comment from "./Comment";
 
 interface CommentListProps {

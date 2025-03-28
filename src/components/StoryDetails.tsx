@@ -1,4 +1,4 @@
-import { useStoryDetails } from "../hooks/fetchStoryDetails";
+import { useStoryDetails } from "../hooks/useStoryDetails";
 
 import CommentList from "./CommentList";
 

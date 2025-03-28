@@ -1,5 +1,35 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-light-background dark:bg-dark-background 
+         text-light-text dark:text-dark-text 
+         transition-colors duration-300 ease-in-out;
+}
+
+/* Custom scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(128, 128, 128, 0.3) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.3);
+  border-radius: 20px;
+}
+
+/* Modal Animations */
 dialog {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -7,4 +37,56 @@ dialog {
 
 dialog[open] {
   opacity: 1;
+}
+
+/* Popup Animations */
+.popup {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup.show {
+  opacity: 1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .header,
+  .filter-bar,
+  .story-feed {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .story-card {
+    padding: 10px;
+    margin: 5px 0;
+  }
+
+  .comment {
+    padding: 10px;
+    margin-left: 20px;
+  }
+}
+
+/* Typography and Spacing */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.story-card,
+.comment {
+  margin-bottom: 20px;
 }

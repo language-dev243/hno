@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useOutletContext } from "react-router";
-import { useStories } from "../hooks/fetchStories";
+import { useStories } from "../hooks/useStories";
 
 import StoryCard from "./StoryCard";
 
