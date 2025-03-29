@@ -13,7 +13,7 @@ const FilterBar: React.FC<FilterBarProps> = ({ selectedCategory, setSelectedCate
   };
 
   return (
-    <div className={`filter-bar ${theme}`}>
+    <div className={`filter-bar ${theme} p-2 flex gap-4 pl-4`}>
       <label htmlFor="category-select" className="filter-label">
         Filter by Category:
       </label>
