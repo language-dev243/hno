@@ -40,7 +40,7 @@ const StoryModal: React.FC<StoryModalProps> = ({
         <button
           ref={closeButtonRef}
           onClick={handleCloseStoryModal}
-          className="absolute z-50 top-2 right-2 text-gray-600 bg-white/50 hover:bg-white/75 rounded-full w-8 h-8 flex items-center justify-center"
+          className="absolute z-50 top-2 right-2 rounded-full w-8 h-8 flex items-center justify-center"
         >
           &times;
         </button>
