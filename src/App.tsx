@@ -5,12 +5,14 @@ import Header from "./components/Header";
 import FilterBar from "./components/FilterBar";
 import StoryModal from "./components/StoryModal";
 import ErrorPopup from "./components/ErrorPopup";
+import { useTheme } from "./hooks/useTheme";
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState("topstories");
   const [isStoryModalOpen, setIsStoryModalOpen] = useState(false);
   const [selectedStoryID, setSelectedStoryID] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const { theme } = useTheme();
 
   const handleOnStoryClick = (storyID: number) => {
     setSelectedStoryID(storyID);
@@ -27,7 +29,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className={theme}>
       <Header />
       <FilterBar
         selectedCategory={selectedCategory}

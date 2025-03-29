@@ -1,48 +1,98 @@
 @import "tailwindcss";
 
-:root {
-  color-scheme: light dark;
-}
-
+/* Base Styles */
 body {
-  @apply bg-light-background dark:bg-dark-background 
-         text-light-text dark:text-dark-text 
-         transition-colors duration-300 ease-in-out;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
-/* Custom scrollbar */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(128, 128, 128, 0.3) transparent;
+/* Light Mode */
+.light {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --header-background: #f8f9fa;
+  --component-background: #ffffff;
+  --border-color: #dddddd;
 }
 
-*::-webkit-scrollbar {
-  width: 8px;
+/* Dark Mode */
+.dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --header-background: #1e1e1e;
+  --component-background: #181818;
+  --border-color: #333333;
 }
 
-*::-webkit-scrollbar-track {
-  background: transparent;
+/* Apply Theme Colors */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-*::-webkit-scrollbar-thumb {
-  background-color: rgba(128, 128, 128, 0.3);
-  border-radius: 20px;
+header {
+  background-color: var(--header-background);
+  color: var(--text-color);
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
 }
 
-/* Modal Animations */
+.filter-bar {
+  padding: 1rem;
+  background-color: var(--component-background);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.story-feed {
+  padding: 1rem;
+}
+
+.story-card,
+.comment {
+  background-color: var(--component-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.comment {
+  margin-left: 20px;
+  border-left: 2px solid var(--border-color);
+}
+
+/* Modal and Popup Styles */
 dialog {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  border: none;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: var(--component-background);
+  color: var(--text-color);
 }
 
 dialog[open] {
   opacity: 1;
 }
 
-/* Popup Animations */
 .popup {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--component-background);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .popup.show {
@@ -65,28 +115,6 @@ dialog[open] {
 
   .comment {
     padding: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
   }
-}
-
-/* Typography and Spacing */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
-
-h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.story-card,
-.comment {
-  margin-bottom: 20px;
 }

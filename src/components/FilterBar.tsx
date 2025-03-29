@@ -1,3 +1,5 @@
+import { useTheme } from "../hooks/useTheme";
+
 interface FilterBarProps {
   selectedCategory: string;
   setSelectedCategory: (category: string) => void;
@@ -7,8 +9,11 @@ const FilterBar: React.FC<FilterBarProps> = ({
   selectedCategory,
   setSelectedCategory,
 }) => {
+
+  const { theme } = useTheme();
+
   return (
-    <div className="bg-gray-800 text-white p-4 flex items-center border-b border-blue-100">
+    <div className={`filter-bar ${theme}`}>
       <h1 className="text-2xl mr-4">Stories</h1>
       <select
         value={selectedCategory}

@@ -1,8 +1,9 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useOutletContext } from "react-router";
 import { useStories } from "../hooks/useStories";
-
+import { useTheme } from "../hooks/useTheme";
 import StoryCard from "./StoryCard";
+
 
 interface StoryFeedProps {
   selectedCategory: string;
@@ -10,13 +11,13 @@ interface StoryFeedProps {
 
 const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory }) => {
   const { handleOnStoryClick, setError } = useOutletContext<{
-    handleOnStoryClick: (storyID: number) => void;
+    handleOnStoryClick: (storyID: string) => void;
     setError: (message: string) => void;
   }>();
-
   const { data, isLoading, error } = useStories(selectedCategory);
   const [storiesLoaded, setStoriesLoaded] = useState(10);
-  const lastStoryRef = useRef(null);
+  const lastStoryRef = useRef<HTMLLIElement>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (error) {
@@ -33,7 +34,7 @@ const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory }) => {
           setStoriesLoaded((prevCount) => prevCount + 10);
         }
       },
-      { threshold: 1.0 },
+      { threshold: 1.0 }
     );
 
     const currentLastStory = lastStoryRef.current;
@@ -52,14 +53,14 @@ const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory }) => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className="bg-gray-800 text-white p-4 flex justify-center items-center">
+    <div className={`story-feed ${theme}`}>
       <ul>
         {data?.slice(0, storiesLoaded).map((id, index) => {
           const isLast = index === storiesLoaded - 1;
           return (
             <li
               key={id}
-              onClick={() => handleOnStoryClick(Number(id))}
+              onClick={() => handleOnStoryClick(String(id))}
               ref={isLast ? lastStoryRef : null}
             >
               <StoryCard storyID={id} />
