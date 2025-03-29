@@ -5,20 +5,23 @@ interface FilterBarProps {
   setSelectedCategory: (category: string) => void;
 }
 
-const FilterBar: React.FC<FilterBarProps> = ({
-  selectedCategory,
-  setSelectedCategory,
-}) => {
-
+const FilterBar: React.FC<FilterBarProps> = ({ selectedCategory, setSelectedCategory }) => {
   const { theme } = useTheme();
+
+  const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCategory(event.target.value);
+  };
 
   return (
     <div className={`filter-bar ${theme}`}>
-      <h1 className="text-2xl mr-4">Stories</h1>
+      <label htmlFor="category-select" className="filter-label">
+        Filter by Category:
+      </label>
       <select
+        id="category-select"
         value={selectedCategory}
-        onChange={(e) => setSelectedCategory(e.target.value)}
-        className="bg-gray-700 text-white p-2 border border-blue-300 rounded"
+        onChange={handleCategoryChange}
+        className="filter-select"
       >
         <option value="topstories">Top Stories</option>
         <option value="newstories">New Stories</option>

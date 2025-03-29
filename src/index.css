@@ -45,6 +45,7 @@ header {
 .filter-bar {
   padding: 1rem;
   background-color: var(--component-background);
+  color: var(--text-color);
   border-bottom: 1px solid var(--border-color);
 }
 

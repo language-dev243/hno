@@ -124,3 +124,19 @@
 
 - [ ] überall error popup implementieren
 - [ ] jdie ersten comments sollten keine vertikale linie haben
+- [ ] $ npm i
+(node:78784) ExperimentalWarning: CommonJS module /Users/dom/.nvm/versions/node/v23.1.0/lib/node_modules/npm/node_modules/debug/src/node.js is loading ES Module /Users/dom/.nvm/versions/node/v23.1.0/lib/node_modules/npm/node_modules/supports-color/index.js using require().
+Support for loading ES Module in require() is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+added 198 packages, and audited 199 packages in 8s
+
+57 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
