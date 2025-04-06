@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useOutletContext } from "react-router";
 import { useStories } from "../hooks/useStories";
-import { useTheme } from "../hooks/useTheme";
 import StoryCard from "./StoryCard";
-
 
 interface StoryFeedProps {
   selectedCategory: string;
@@ -17,7 +15,6 @@ const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory }) => {
   const { data, isLoading, error } = useStories(selectedCategory);
   const [storiesLoaded, setStoriesLoaded] = useState(10);
   const lastStoryRef = useRef<HTMLLIElement>(null);
-  const { theme } = useTheme();
 
   useEffect(() => {
     if (error) {
@@ -53,7 +50,7 @@ const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory }) => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className={`story-feed ${theme}`}>
+    <div>
       <ul>
         {data?.slice(0, storiesLoaded).map((id, index) => {
           const isLast = index === storiesLoaded - 1;

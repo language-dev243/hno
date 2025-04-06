@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useComments } from "../hooks/useComments";
 import Comment from "./Comment";
 

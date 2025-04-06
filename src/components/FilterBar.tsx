@@ -1,7 +1,4 @@
-import { useTheme } from "../hooks/useTheme";
-
 import ToggleThemeButton from "./ToggleThemeButton";
-
 
 interface FilterBarProps {
   selectedCategory: string;
@@ -9,14 +6,12 @@ interface FilterBarProps {
 }
 
 const FilterBar: React.FC<FilterBarProps> = ({ selectedCategory, setSelectedCategory }) => {
-  const { theme } = useTheme();
-
   const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCategory(event.target.value);
   };
 
   return (
-    <div className={`filter-bar ${theme} top-0 border-t border-b sticky flex p-3 justify-between`}>
+    <div className={`.filter-bar top-0 border-t border-b sticky flex p-3 justify-between`}>
       <div className="flex pl-10">
         <select
           id="category-select"

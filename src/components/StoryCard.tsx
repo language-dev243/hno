@@ -11,7 +11,7 @@ const StoryCard: React.FC<StoryCardProps> = ({ storyID }) => {
   if (error) return <div>Error fetching story details</div>;
 
   return (
-    <div className="flex flex-col m-6 p-6 border">
+    <div className="flex flex-col m-6 p-6 border story-card">
       <div className="flex flex-row">
         <p>
           {data?.by} - {data?.time} - {data?.url}

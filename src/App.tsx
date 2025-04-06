@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Outlet } from "react-router";
 
+import { useTheme } from "./hooks/useTheme";
+
 import Header from "./components/Header";
 import FilterBar from "./components/FilterBar";
 import StoryModal from "./components/StoryModal";
@@ -11,6 +13,8 @@ const App = () => {
   const [isStoryModalOpen, setIsStoryModalOpen] = useState(false);
   const [selectedStoryID, setSelectedStoryID] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const { theme } = useTheme();
+
 
   const handleOnStoryClick = (storyID: number) => {
     setSelectedStoryID(storyID);
@@ -27,7 +31,7 @@ const App = () => {
   };
 
   return (
-    <div className="w-11/12 mx-auto">
+    <div className={`${theme} w-11/12 mx-auto`}>
       <Header />
       <FilterBar
         selectedCategory={selectedCategory}

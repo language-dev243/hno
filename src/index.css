@@ -36,15 +36,9 @@ body {
   --shadow-color: rgba(0, 0, 0, 0.4);
 }
 
-.header {
-  transition: all 0.3s ease;
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
+.header,
 .filter-bar {
   transition: all 0.3s ease;
-  background-color: var(--background-color);
 }
 
 .toggle-theme-button {
@@ -102,31 +96,4 @@ dialog {
 dialog[open] {
   opacity: 1;
   transform: translateY(0) scale(1);
-}
-
-.popup {
-  opacity: 0;
-  transform: translateX(20px);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  box-shadow: 0 4px 12px var(--shadow-color);
-  z-index: 100;
-  border-left: 4px solid var(--accent-color);
-}
-
-.popup.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.popup.error {
-  border-left-color: #e53935;
-}
-
-.popup.success {
-  border-left-color: #43a047;
 }
