@@ -1,19 +1,9 @@
 @import "tailwindcss";
 
-/* Base Styles */
 body {
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    sans-serif;
   margin: 0;
   padding: 0;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
-  line-height: 1.6;
-  font-size: 16px;
+  transition: all 0.3s ease;
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -40,8 +30,7 @@ body {
 .filter-bar {
   transition: all 0.3s ease;
 }
-
-.toggle-theme-button {
+ö .toggle-theme-button {
   padding: 0.5rem 1rem;
   border: none;
   cursor: pointer;
