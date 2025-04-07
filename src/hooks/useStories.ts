@@ -22,6 +22,6 @@ export const useStories = (category: string) => {
   return useQuery<StoryID[]>({
     queryKey: ["stories", category],
     queryFn: () => fetchStories(category),
-    enabled: !!category,
+    enabled: !!category
   });
 };

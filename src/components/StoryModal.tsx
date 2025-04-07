@@ -30,7 +30,7 @@ const StoryModal: React.FC<StoryModalProps> = ({
   return (
     <dialog
       ref={dialogRef}
-      className="rounded-lg p-0 max-w-[95%] w-full max-h-[90vh] overflow-hidden"
+      className="max-w-[95%] w-full max-h-[90vh] overflow-hidden"
       onClick={handleCloseStoryModal}
     >
       <div
@@ -40,12 +40,13 @@ const StoryModal: React.FC<StoryModalProps> = ({
         <button
           ref={closeButtonRef}
           onClick={handleCloseStoryModal}
-          className="absolute z-50 top-2 right-2 rounded-full w-8 h-8 flex items-center justify-center"
+          className="absolute z-50 top-4 right-4 rounded-full w-10 h-10 flex items-center justify-center text-xl hover:bg-opacity-10 hover:bg-black dark:hover:bg-white dark:hover:bg-opacity-10 transition-all"
+          aria-label="Close"
         >
           &times;
         </button>
         {selectedStoryID && (
-          <div className="pt-10 h-full overflow-y-auto">
+          <div className="pt-10 h-full overflow-y-auto px-6 pb-6">
             <StoryDetails selectedStoryID={selectedStoryID} />
           </div>
         )}

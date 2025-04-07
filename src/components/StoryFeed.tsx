@@ -41,7 +41,7 @@ const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory, handleOnStoryCl
         observer.unobserve(currentLastStory);
       }
     };
-  }, [data, storiesLoaded]);
+  }, [data, storiesLoaded, selectedCategory]);
 
   if (isLoading) return <div>Loading...</div>;
 
