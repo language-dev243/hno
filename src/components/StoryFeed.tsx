@@ -1,26 +1,22 @@
 import { useState, useEffect, useRef } from "react";
-import { useOutletContext } from "react-router";
 import { useStories } from "../hooks/useStories";
 import StoryCard from "./StoryCard";
 
 interface StoryFeedProps {
   selectedCategory: string;
+  handleOnStoryClick: (storyID: number) => void;
 }
 
-const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory }) => {
-  const { handleOnStoryClick, setError } = useOutletContext<{
-    handleOnStoryClick: (storyID: string) => void;
-    setError: (message: string) => void;
-  }>();
+const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory, handleOnStoryClick }) => {
   const { data, isLoading, error } = useStories(selectedCategory);
   const [storiesLoaded, setStoriesLoaded] = useState(10);
   const lastStoryRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     if (error) {
-      setError("Failed to load stories. Please try again later.");
+      console.log("Failed to load stories. Please try again later.");
     }
-  }, [error, setError]);
+  }, [error]);
 
   useEffect(() => {
     if (!data) return;
@@ -49,6 +45,8 @@ const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory }) => {
 
   if (isLoading) return <div>Loading...</div>;
 
+  console.log("data from storyfeed: ", data)
+
   return (
     <div>
       <ul>
@@ -57,7 +55,7 @@ const StoryFeed: React.FC<StoryFeedProps> = ({ selectedCategory }) => {
           return (
             <li
               key={id}
-              onClick={() => handleOnStoryClick(String(id))}
+              onClick={() => handleOnStoryClick(Number(id))}
               ref={isLast ? lastStoryRef : null}
             >
               <StoryCard storyID={id} />

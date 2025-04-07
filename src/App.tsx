@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Outlet } from "react-router";
 
 import { useTheme } from "./hooks/useTheme";
 
 import Header from "./components/Header";
 import FilterBar from "./components/FilterBar";
+import StoryFeed from "./components/StoryFeed";
 import StoryModal from "./components/StoryModal";
 import ErrorPopup from "./components/ErrorPopup";
 
@@ -37,7 +37,7 @@ const App = () => {
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
       />
-      <Outlet context={{ handleOnStoryClick, setError }} />
+      <StoryFeed selectedCategory={selectedCategory} handleOnStoryClick={handleOnStoryClick} />
       <StoryModal
         isStoryModalOpen={isStoryModalOpen}
         selectedStoryID={selectedStoryID}

@@ -7,8 +7,10 @@ const fetchStories = async (category: string): Promise<StoryID[]> => {
   const { data } = await axios.get(
     `https://hacker-news.firebaseio.com/v0/${category}.json`,
   );
+
+  console.log("data from useStories: ", data)
   return data;
-  
+
   // Simulate an error by using an invalid URL or throwing an error
   // await axios.get(`https://invalid-url.firebaseio.com/v0/${category}.json`);
 

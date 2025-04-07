@@ -6,8 +6,10 @@ interface FilterBarProps {
 }
 
 const FilterBar: React.FC<FilterBarProps> = ({ selectedCategory, setSelectedCategory }) => {
+
   const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCategory(event.target.value);
+    console.log("set selected category to: ", event.target.value)
   };
 
   return (
